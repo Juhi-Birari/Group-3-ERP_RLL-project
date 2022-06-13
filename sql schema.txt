@@ -1,0 +1,113 @@
+mysql> show tables;
++--------------------+
+| Tables_in_erp      |
++--------------------+
+| admin              |
+| admins             |
+| course             |
+| hibernate_sequence |
+| parent             |
+| review             |
+| student            |
+| student_course     |
+| teachers           |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> desc admin;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| id       | bigint       | NO   | PRI | NULL    |       |
+| email    | varchar(40)  | YES  |     | NULL    |       |
+| fullname | varchar(255) | YES  |     | NULL    |       |
+| password | varchar(255) | YES  |     | NULL    |       |
+| phone    | varchar(10)  | YES  |     | NULL    |       |
+| username | varchar(20)  | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> desc admins;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| admin_id       | bigint       | NO   | PRI | NULL    |       |
+| admin_email    | varchar(40)  | YES  |     | NULL    |       |
+| admin_name     | varchar(255) | YES  |     | NULL    |       |
+| admin_password | varchar(255) | YES  |     | NULL    |       |
+| admin_phone    | varchar(10)  | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc course;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | bigint       | NO   | PRI | NULL    |       |
+| name  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc hibernate_sequence;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc parent;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| id          | bigint       | NO   | PRI | NULL    |       |
+| parent_name | varchar(255) | YES  |     | NULL    |       |
+| age         | int          | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc review;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id           | int          | NO   | PRI | NULL    |       |
+| descripation | varchar(255) | YES  |     | NULL    |       |
+| rating       | varchar(255) | YES  |     | NULL    |       |
+| course_id    | int          | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc student;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | bigint       | NO   | PRI | NULL    |       |
+| fullname  | varchar(255) | YES  |     | NULL    |       |
+| user_name | varchar(255) | YES  |     | NULL    |       |
+| password  | varchar(255) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc student_course;
++-----------+--------+------+-----+---------+-------+
+| Field     | Type   | Null | Key | Default | Extra |
++-----------+--------+------+-----+---------+-------+
+| id        | bigint | YES  |     | NULL    |       |
+| course_id | int    | YES  |     | NULL    |       |
++-----------+--------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc teachers;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| id               | bigint       | NO   | PRI | NULL    |       |
+| course_name      | varchar(225) | YES  |     | NULL    |       |
+| email            | varchar(40)  | YES  |     | NULL    |       |
+| phone            | varchar(10)  | YES  |     | NULL    |       |
+| teacher_id       | bigint       | YES  |     | NULL    |       |
+| tid              | int          | YES  |     | NULL    |       |
+| teacher          | varchar(225) | YES  |     | NULL    |       |
+| teacher_password | varchar(225) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
